@@ -1,0 +1,13 @@
+#waiting-message {
+    -fx-font-size: 3em;
+    -fx-font-style: italic;
+    -fx-font-family: Baskerville;
+}
+
+Text {
+    -fx-font-weight: bold;
+}
+
+.highlight {
+    -fx-strikethrough: true;
+}
