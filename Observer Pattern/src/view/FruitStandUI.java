@@ -1,6 +1,9 @@
-package fruit_example;
+package view;
 
+import controller.FruitController;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -13,11 +16,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.Fruit;
+import model.FruitModel;
+import observers.IObserver;
+import observers.Observable;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class FruitStandUI extends Application
+public class FruitStandUI extends Application implements IObserver
 {
     public static final int WIN_SIZE = 400;
     public static final int STANDARD_SPACING = 10;
@@ -120,5 +128,22 @@ public class FruitStandUI extends Application
         panel.getChildren().addAll(label, textField);
 
         return panel;
+    }
+
+    @Override
+    public void update(Observable observable, Object arguments)
+    {
+        FruitModel.Change change = (FruitModel.Change)arguments;
+        //FruitModel model = (FruitModel)observable;
+
+        if (change == FruitModel.Change.ADD ||
+            change == FruitModel.Change.UPDATE ||
+            change == FruitModel.Change.REMOVE)
+        {
+            //update my UI
+            List<Fruit> fruits = controller.getFruits();
+            ObservableList<Fruit> fruitForListView = FXCollections.observableList(fruits);
+            fruitList.setItems(fruitForListView);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package fruit_example;
+package model;
 
 import java.util.UUID;
 

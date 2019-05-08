@@ -1,11 +1,13 @@
-package fruit_example;
+package model;
+
+import observers.Observable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-public class FruitModel
+public class FruitModel extends Observable
 {
     private List<Fruit> fruits;
 
@@ -18,6 +20,7 @@ public class FruitModel
     public void addFruit(Fruit fruit)
     {
         fruits.add(fruit);
+        notifyObservers(Change.ADD);
     }
 
     public void removeFruit(UUID id)
@@ -29,6 +32,7 @@ public class FruitModel
                 fruits.remove(i);
             }
         }
+        notifyObservers(Change.REMOVE);
     }
 
     public List<Fruit> getFruits()
@@ -48,6 +52,7 @@ public class FruitModel
                 break;
             }
         }
+        notifyObservers(Change.UPDATE);
     }
 
     public enum Change
