@@ -1,6 +1,6 @@
-package model;
+package fruit.model;
 
-import observers.Observable;
+import fruit.observers.Observable;
 
 import java.util.ArrayList;
 import java.util.Collections;

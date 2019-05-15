@@ -1,4 +1,4 @@
-package view;
+package fruit.view;
 
 import javafx.application.Application;
 

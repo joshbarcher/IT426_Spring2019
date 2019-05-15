@@ -1,6 +1,6 @@
-package view;
+package fruit.view;
 
-import controller.FruitController;
+import fruit.controller.FruitController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,10 +16,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import model.Fruit;
-import model.FruitModel;
-import observers.IObserver;
-import observers.Observable;
+import fruit.model.Fruit;
+import fruit.model.FruitModel;
+import fruit.observers.IObserver;
+import fruit.observers.Observable;
 
 import java.util.HashMap;
 import java.util.List;
@@ -134,7 +134,7 @@ public class FruitStandUI extends Application implements IObserver
     public void update(Observable observable, Object arguments)
     {
         FruitModel.Change change = (FruitModel.Change)arguments;
-        //FruitModel model = (FruitModel)observable;
+        //FruitModel fruit.model = (FruitModel)observable;
 
         if (change == FruitModel.Change.ADD ||
             change == FruitModel.Change.UPDATE ||

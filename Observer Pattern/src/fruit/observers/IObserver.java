@@ -1,4 +1,4 @@
-package observers;
+package fruit.observers;
 
 public interface IObserver
 {

@@ -1,8 +1,8 @@
-package controller;
+package fruit.controller;
 
-import model.Fruit;
-import model.FruitModel;
-import view.FruitStandUI;
+import fruit.model.Fruit;
+import fruit.model.FruitModel;
+import fruit.view.FruitStandUI;
 
 import java.util.List;
 import java.util.UUID;
