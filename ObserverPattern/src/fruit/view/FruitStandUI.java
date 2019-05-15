@@ -1,6 +1,10 @@
 package fruit.view;
 
 import fruit.controller.FruitController;
+import fruit.model.Fruit;
+import fruit.model.FruitModel;
+import fruit.observers.IObserver;
+import fruit.observers.Observable;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,10 +20,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import fruit.model.Fruit;
-import fruit.model.FruitModel;
-import fruit.observers.IObserver;
-import fruit.observers.Observable;
 
 import java.util.HashMap;
 import java.util.List;
