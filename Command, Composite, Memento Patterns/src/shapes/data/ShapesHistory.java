@@ -47,4 +47,26 @@ public class ShapesHistory
 
         return builder.toString();
     }
+
+    public Memento saveState()
+    {
+        return new Memento();
+    }
+
+    public void rollback(Memento memento)
+    {
+        //change my shape history to match what is inside of the memento
+        shapes = new HashSet<>(memento.savedShapes);
+    }
+
+    //this class will store the history state of our program
+    public class Memento
+    {
+        private Set<Shape> savedShapes;
+
+        private Memento()
+        {
+            savedShapes = new HashSet<>(shapes);
+        }
+    }
 }
